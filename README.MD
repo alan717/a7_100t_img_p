@@ -4,4 +4,11 @@
 
 ###### @: send this 
 ###### title:Gigabit 1000Mb+ DDR3 + image binaryzation implement 
-#### stage<h4>
+### Stage:<h3>
+#### 1.just test gigabit ip & simulation<h4>
+#### 2.assemble pc vb exe<h4>
+#### 3.try understand brd design<h4>
+#### 4.try design my udp work<h4> ---------now-ing
+
+## just for learn and test <h2>
+###### :+1: :sparkles: :octocat:

@@ -10,7 +10,6 @@
 #### 2.assemble pc vb exe<h4> 2016.8.20
 #### 3.try understand brd design<h4> 2016.9.1
 #### 4.try design my udp work---------now-ing <h4> 2016.9.10
-#### 5.try rebuild some low level code 2017.5.30
 #### 
 
 

@@ -1,0 +1,1 @@
+dialog --title "my linux program inforbox" --backtitle "linux shell scripte" --infobox "this is diaglog box called infobox ,which is used to show some infor mation on screen .thanks to savio lam and stuart herbert to five us this utility .press anykey ..." 10 50 ;read

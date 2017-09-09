@@ -4,3 +4,17 @@
     Caching. Just…use caching. Does that count as an algorithm? I don't know, but it is the cause of, and solution to, all of your problems.
     The idea of a concurrent work queue.
     Knowing when to throw hashtables at a problem.
+
+
+
+
+    Binary search
+    Quicksort
+    Backtracking
+    Hash table
+    Linear congruential generator and Mersenne Twister
+    Linear least squares
+    Karatsuba algorithm
+    Divide and conquer for Matrix multiplication
+    Dijkstra's algorithm
+    Knuth–Morris–Pratt algorithm

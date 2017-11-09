@@ -1,0 +1,5 @@
+#lsb_release -a 
+---output the system info
+#echo $BASH_VERSION
+---output bash info 
+#

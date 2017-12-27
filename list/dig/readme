@@ -1,0 +1,53 @@
+https://www.xilinx.com/support/university/vivado/vivado-workshops/Vivado-embedded-linux-zynq.html
+Embedded Linux on Zynq using Vivado
+///////////////////////////////////////
+ Skills Gained
+
+After completing this workshop, you will be able to:
+
+    Understand the basics of the Linux operating system and Embedded Linux concepts including:
+        Linux kernel architecture
+        Device driver concepts and loadable modules
+    Use the Xilinx Vivado and PetaLinux Tools to achieve a working embedded Linux kernel on a Zynq platform
+    Build, modify and debug Embedded Linux applications on the ARM Cortex-A9 platform
+    Develop a simple custom hardware peripheral having AXI interface for ARM Cortex-A9
+    Develop a simple Linux device driver for the custom hardware peripheral
+
+Course Overview
+
+Day 1:
+
+    Introduction
+    Embedded Linux Overview
+    Lab 1: A First Look
+        Compare and contrast embedded Linux on Xilinx Zynq SoC and Linux on desktop.
+    Introduction to PetaLinux Tools
+    Lab 2: Build and Boot Linux
+        Build your own kernel image and boot new image via the network.
+    Application Development
+    Lab 3: Application Development and Debug
+        Create an application using a script file and debug using cross-debugger.
+    Networking and TCP/IP
+    Lab 4: Networking
+        File transfer, Network File System (NFS) mount, and embedded web-server and web-based applications.
+    Device Drivers and Modules
+    Lab 5: Drivers and Modules
+        Create a simple run-time loadable kernel module.
+
+Day 2:
+
+    Introduction to Vivado, SDK, and Zynq
+    Lab 1: Vivado IP Integrator and Board Bringup
+        Create a Linux capable ARM Cortex-based Zynq platform from scratch including hardware and kernel.
+    Custom Hardware Development and Interfacing
+    Lab 2: Custom Hardware Development
+        Use custom core with AXI interface.
+    Custom Device Drivers
+    Lab 3: A Driver for the New Hardware
+        Develop UIO drivers for the AXI custom IP core and an application to test them.
+
+//////////////////////////////////////////////////
+
+
+
+

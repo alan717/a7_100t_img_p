@@ -147,11 +147,13 @@ public class NativeEngine {
         if (!origPath.endsWith("/")) {
             origPath = origPath + "/";
         }
+        VLog.d(TAG,"org dic:"+origPath);
         if (!newPath.endsWith("/")) {
             newPath = newPath + "/";
         }
         try {
             nativeIORedirect(origPath, newPath);
+            VLog.d(TAG,"NEW PAT:"+newPath);
         } catch (Throwable e) {
             VLog.e(TAG, VLog.getStackTraceString(e));
         }

@@ -43,8 +43,8 @@ int add_forbidden_item(const char *path) {
 int add_replace_item(const char *orig_path, const char *new_path) {
     //TODO:16022018 增加替换的项目
     //backtraceToLogcat();
-    ALOGD("org:%s---->", orig_path);
-    ALOGD("new:%s---->", new_path);
+   // ALOGD("org:%s---->", orig_path);
+    //ALOGD("new:%s---->", new_path);
     char src_env_name[25];
     char dst_env_name[25];
     sprintf(src_env_name, "V_REPLACE_ITEM_SRC_%d", replace_item_count);
@@ -96,7 +96,7 @@ inline bool match_path(bool is_folder, size_t size, const char *item_path, const
     //strrchr(path,'/');
     const char *p = strrchr(path, '/');
     uint distance = p - path;
-    ALOGD("HOW_TO_MATCH:%s---%s,fid:%sdis:%d", item_path, path, p, distance);
+   // ALOGD("HOW_TO_MATCH:%s---%s,fid:%sdis:%d", item_path, path, p, distance);
 
     if (is_folder) {
         if (strlen(path) < size) {
@@ -113,7 +113,7 @@ inline bool match_path(bool is_folder, size_t size, const char *item_path, const
 const char *relocate_path(const char *path, int *result) {
 
     //TODO:04 重定向的资源处理
-    ALOGD("fuck_path:%s", path);
+   // ALOGD("fuck_path:%s", path);
     if (path == NULL) {
         *result = NOT_MATCH;
         return NULL;
@@ -123,9 +123,9 @@ const char *relocate_path(const char *path, int *result) {
         if (strcmp(item.path, path) == 0) {
             *result = KEEP;
             if (strstr(path, ".so")) {
-                ALOGD("BUG 1HERE");
+               // ALOGD("BUG 1HERE");
             }
-            ALOGD("BUG1HERE");
+            //ALOGD("BUG1HERE");
             return path;
         }
     }
@@ -152,28 +152,28 @@ const char *relocate_path(const char *path, int *result) {
                 }
 
 
-                ALOGD("%s-%s", item.new_path, path);
-                ALOGD("BUG2HERE");
+                //ALOGD("%s-%s", item.new_path, path);
+                //ALOGD("BUG2HERE");
                 return strdup(redirect_path.c_str());
             } else {
                 // 這段代碼作廢.暫時型的 ----start
 
                 std::string redirect_path(item.new_path);
 
-                ALOGD("SSSSSS:--->%s",
-                      redirect_path.c_str());///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/
+               // ALOGD("SSSSSS:--->%s",
+                  //    redirect_path.c_str());///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/
                 redirect_path += path + item.orig_size;
-                if (strstr(path, "libfmodex.so")) {
-                    ALOGD("%d", item.orig_size);
-                    ALOGD("%s",
-                          item.new_path);        ///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/
-                    ALOGD("%s",
-                          path);                 ///data/data/com.netease.mhxyhtb/lib/libfmodex.so
-                    ALOGD("%s,%s", item.orig_path, item.new_path);
-                    ALOGD("BUG 3HERE");
-                    ALOGD("%s",
-                          redirect_path.c_str());///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/lib/libfmodex.so
-                }
+//                if (strstr(path, "libfmodex.so")) {
+//                    //ALOGD("%d", item.orig_size);
+//                  //  ALOGD("%s",
+//                     //     item.new_path);        ///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/
+//                   // ALOGD("%s",
+//                     //     path);                 ///data/data/com.netease.mhxyhtb/lib/libfmodex.so
+//                  //  ALOGD("%s,%s", item.orig_path, item.new_path);
+//                   // ALOGD("BUG 3HERE");
+//                   // ALOGD("%s",
+//                     //     redirect_path.c_str());///data/user/0/io.virtualhook/virtual/data/user/0/com.netease.mhxyhtb/lib/libfmodex.so
+//                }//
 
 
                 // ------ end

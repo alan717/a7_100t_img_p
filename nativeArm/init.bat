@@ -1,0 +1,1 @@
+set PATH=D:\cur\my\my-toolchain-arm\bin;%PATH%

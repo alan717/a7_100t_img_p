@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "io.virtualhook"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 23
         versionName "1.2.5"
         android {

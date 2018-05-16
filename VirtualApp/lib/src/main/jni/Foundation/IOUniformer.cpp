@@ -86,6 +86,7 @@ hook_function(void *handle, const char *symbol, void *new_func, void **old_func)
 void onSoLoaded(const char *name, void *handle);
 
 void IOUniformer::redirect(const char *orig_path, const char *new_path) {
+    ALOGD("REDIRECT PATH:%s->\n%s",orig_path,new_path);
     add_replace_item(orig_path, new_path);
 }
 
@@ -95,11 +96,14 @@ const char *IOUniformer::query(const char *orig_path) {
 }
 
 void IOUniformer::whitelist(const char *_path) {
+    ALOGD("WHITE PATH:%s",_path);
     add_keep_item(_path);
 }
 
 void IOUniformer::forbid(const char *_path) {
+    ALOGD("BAN PATH:%s",_path);
     add_forbidden_item(_path);
+
 }
 
 
@@ -614,7 +618,7 @@ HOOK_DEF(void*, do_dlopen_V19, const char *filename, int flag, const void *extin
 
 HOOK_DEF(void*, do_dlopen_V24, const char *name, int flags, const void *extinfo,
          void *caller_addr) {
-    ALOGD("do_dlopen_v24 org ---> %s");
+
     int res;
     const char *redirect_path = relocate_path(name, &res);
     void *ret = orig_do_dlopen_V24(redirect_path, flags, extinfo, caller_addr);

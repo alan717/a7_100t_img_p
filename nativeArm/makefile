@@ -7,21 +7,22 @@ CFLAGS=-Wall
 # 宏定义  
 DEFS = -fPIE -pie -llog 
 CFLAGS += $(DEFS)  
+LDFLAGS = -g -L./lib/  -lcurl -lz
 # 目标文件  
       
-TARGET=test  
+TARGET=   mmp
 # 源文件  
-SRCS = src/main.cpp
+SRCS =   src/mmap.cpp
      
 # 头文件查找路径  
-INC = -I./inc/ -L./lib/ -lcurl  
+INC = -I./inc/ 
 # 目标文件  
 OBJS = $(SRCS:.cpp=.o)  
 # 链接为可执行文件  
 $(TARGET):$(OBJS)  
 #   @echo TARGET:$@  
 #   @echo OBJECTS:$^  
-	$(CC) $(CFLAGS) -o $@ $^  -L./lib/ -lcurl -lz
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^  
 clean:  
 	rm -rf $(TARGET) $(OBJS)  
 # 连续动作，请清除再编译链接，最后执行  

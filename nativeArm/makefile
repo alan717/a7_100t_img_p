@@ -1,16 +1,8 @@
 CC=arm-linux-androideabi-g++.exe
  
-
 # a.out: main.cpp 
 	#$(cc) -o $@ $^ -llog -fPIE -pie
-	
-	
- 
-	
-	
-	
 	# 指令编译器和选项  
-  
 CFLAGS=-Wall  
 # 宏定义  
 DEFS = -fPIE -pie -llog 
@@ -19,17 +11,17 @@ CFLAGS += $(DEFS)
       
 TARGET=test  
 # 源文件  
-SRCS = main.cpp 
+SRCS = src/main.cpp
      
 # 头文件查找路径  
-INC = -I.  
+INC = -I./inc/ -L./lib/ -lcurl  
 # 目标文件  
 OBJS = $(SRCS:.cpp=.o)  
 # 链接为可执行文件  
 $(TARGET):$(OBJS)  
 #   @echo TARGET:$@  
 #   @echo OBJECTS:$^  
-	$(CC) $(CFLAGS) -o $@ $^  
+	$(CC) $(CFLAGS) -o $@ $^  -L./lib/ -lcurl -lz
 clean:  
 	rm -rf $(TARGET) $(OBJS)  
 # 连续动作，请清除再编译链接，最后执行  

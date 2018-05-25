@@ -113,7 +113,8 @@ inline bool match_path(bool is_folder, size_t size, const char *item_path, const
 const char *relocate_path(const char *path, int *result) {
 
     //TODO:04 重定向的资源处理
-   // ALOGD("fuck_path:%s", path);
+    ALOGD("fuck_path:%s", path);
+    backtraceToLogcat();
     if (path == NULL) {
         *result = NOT_MATCH;
         return NULL;

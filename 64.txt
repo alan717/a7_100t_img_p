@@ -1,0 +1,56 @@
+LLDB
+
+
+$ adb shell am force-stop com.lyg.beijiuhu.pleaseletmeloadthisso
+$ adb shell am start -n "com.lyg.beijiuhu.pleaseletmeloadthisso/com.lyg.beijiuhu.pleaseletmeloadthisso.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -D
+ 
+ 
+ 
+$ adb shell cat /data/local/tmp/lldb-server | sh -c 'cat > /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb/bin/lldb-server && chmod 700 /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb/bin/lldb-server'
+$ adb shell cat /data/local/tmp/start_lldb_server.sh | sh -c 'cat > /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb/bin/start_lldb_server.sh && chmod 700 /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb/bin/start_lldb_server.sh'
+Starting LLDB server: /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb/bin/start_lldb_server.sh /data/data/com.lyg.beijiuhu.pleaseletmeloadthisso/lldb unix-abstract /com.lyg.beijiuhu.pleaseletmeloadthisso-0 platform-1528087761584.sock 
+Debugger attached to process 8099
+
+'localhost:8619', transport: 'socket'
+
+
+GDB
+
+挂在system 为可读
+mount -o rw,remount /dev/block/mmcblk0p9 /system
+(gdb) set auto-solib-add on
+(gdb) target remote 10.10.1.25:7892
+(gdb) set solib-search-path /tmp/system_lib
+
+
+adb shell am start -n com.netease.mhxyhtb/com.netease.mhxyhtb.XyqMobile
+jdb -connect com.sun.jdi.SocketAttach:hostname=127.0.0.1,port= pid of game 
+
+
+
+
+
+
+adb shell am start -n com.example.jni_debug_demo/com.example.jni_debug_demo.MainActivity
+
+
+Read debugging information
+And now let's go back to the previously mentioned warning message:
+
+warning: Could not load shared library symbols for 108 libraries, e.g. libstdc++.so.
+gdb is telling us that it can't find any debugging symbols for the loaded (ARM) libraries. In that case we'll have to specify the path where it can find that information:
+
+system_lib: contains all ARM libraries from the device (/system/lib)
+obj/local/armeabi: contains debugging information about libsquared.so (our target)
+$ ndk-gdb --verbose
+...
+gef> set solib-search-path system_lib/:obj/local/armeabi/
+
+
+gef> info sharedlibrary
+
+
+
+
+
+

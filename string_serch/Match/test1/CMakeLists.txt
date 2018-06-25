@@ -7,4 +7,5 @@ message("${SRC}")
 add_executable(${PROJECT_NAME}  ${SRC})
 add_definitions(-Dtest)
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
 set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/BUILD/)

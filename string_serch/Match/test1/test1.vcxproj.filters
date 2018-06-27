@@ -35,6 +35,5 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
-    <Text Include="README.txt" />
   </ItemGroup>
 </Project>

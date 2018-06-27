@@ -1,9 +1,0 @@
-﻿  benchmark.cpp
-c:\users\think\source\repos\match\match\benchmark.cpp(167): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  BoyerMooreAndTurbo.cpp
-c:\users\think\source\repos\match\match\boyermooreandturbo.cpp(225): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  Horspool.cpp
-c:\users\think\source\repos\match\match\horspool.cpp(91): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  HorspoolTest.cpp
-c:\users\think\source\repos\match\match\horspooltest.cpp(141): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  Generating Code...

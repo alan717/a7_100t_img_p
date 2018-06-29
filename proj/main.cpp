@@ -6,12 +6,9 @@ namespace asio = boost::asio;
  int main() {
 	asio::io_service service;
 	
-		service.post(
-		 [] {
-		 std::cout << "Hello, world!" << '\n';
-		 });
+		service.post([] {std::cout << "Hello, world!" << '\n';});
 	
-		 std::cout << "Greetings: \n";
+	 std::cout << "Greetings: \n";
 	 service.run();
 	 return 0;
 }

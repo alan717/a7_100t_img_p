@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Wallpaper</string>
+    <string name="doubleClick">双击进入设置</string>
+    <string name="hydrogen">氢壁纸视频桌面</string>
+    <string name="mute">关闭声音</string>
+    <string name="qq">QQ交流群</string>
+    <string name="rotate">旋转90度</string>
+    <string name="scale">移动缩放</string>
+    <string name="select_video">选择视频</string>
+    <string name="theme_Translucent">透明预览</string>
+</resources>
+

@@ -13,7 +13,7 @@ FILE(GLOB_RECURSE SRC_LIST ${PROJECT_SOURCE_DIR}/*.cpp)
 
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-     #add_executable(foo foo.cc)
+ 
 	 set(Boost_USE_DEBUG_LIBS ON)
 	 #打印一下简单的消息
 	 message( STATUS "${Boost_INCLUDE_DIRS};\n${Boost_LIBRARY_DIRS};\n${Boost_LIBRARIES};\n${Boost_VERSION}")

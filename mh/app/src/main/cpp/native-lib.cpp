@@ -11,7 +11,8 @@ void __attribute__ ((constructor)) libhook_main() {
 
     char path[256],buff[256];
 
-    snprintf(path, sizeof(path),"/proc/%d/smaps")
+    snprintf(path, sizeof(path),"/proc/%d/smaps");
+
 
 
 }

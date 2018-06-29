@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/app_name">
+        <Preference android:title="@string/select_video" android:key="select_file" />
+        <ListPreference android:entries="@array/carouselEntities" android:title="预设目录" android:key="pref_carousel_dir" android:defaultValue="0" android:entryValues="@array/carouselValues" />
+        <CheckBoxPreference android:title="随机播放" android:key="pref_carousel_type" android:defaultValue="true" />
+        <Preference android:title="@string/rotate" android:key="rotate" />
+        <CheckBoxPreference android:title="@string/mute" android:key="mute" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/scale" android:key="scale" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/doubleClick" android:key="doubleClick" android:defaultValue="true" />
+        <Preference android:title="@string/hydrogen" android:key="hydrogen" />
+        <Preference android:title="@string/qq" android:key="qq" />
+        <CheckBoxPreference android:title="@string/theme_Translucent" android:key="theme_Translucent" android:defaultValue="true" />
+        <Preference android:key="close" />
+    </PreferenceCategory>
+</PreferenceScreen>

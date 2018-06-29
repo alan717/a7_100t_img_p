@@ -7,7 +7,7 @@ CFLAGS=-Wall
 # 宏定义  
 DEFS = -fPIE -pie -llog 
 CFLAGS += $(DEFS)  
-LDFLAGS = -g -L./lib/  -lcurl -lz
+LDFLAGS = -g -L./lib/   -lz
 # 目标文件  
       
 TARGET=   mmp

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="carouselEntities">
+        <item>自选视频所在目录</item>
+        <item>光点视频壁纸目录</item>
+        <item>火萤视频桌面目录</item>
+        <item>Bilibili缓存目录</item>
+        <item>抖音[相机]目录</item>
+        <item>AcFun下载目录</item>
+        <item>音悦台下载目录</item>
+        <item>酷狗MV缓存目录</item>
+        <item>单视频循环播放</item>
+    </array>
+    <array name="carouselValues">
+        <item>0</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </array>
+</resources>

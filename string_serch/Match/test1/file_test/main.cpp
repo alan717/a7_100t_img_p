@@ -42,7 +42,7 @@ int main(int argc ,char ** argv ) {
 	typedef std::istream_iterator<int> in;
 	std::cout << "asdasda" << std::endl;
 	std::for_each(
-		in(std::cin), in(), std::cout << (_1 * 3) << " ");
+		in(std::cin), in(), std::cout << (_1 * 3) << "  \n");
 
 
 	

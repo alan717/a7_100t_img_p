@@ -1,2 +1,0 @@
-aflag = 0, bflag = 0, cvalue = (null)
-Non-option argument 23

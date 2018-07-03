@@ -113,7 +113,7 @@ inline bool match_path(bool is_folder, size_t size, const char *item_path, const
 const char *relocate_path(const char *path, int *result) {
 
     //TODO:04 重定向的资源处理
-    ALOGD("fuck_path:%s", path);
+    //ALOGD("fuck_path:%s", path);
     backtraceToLogcat();
     if (path == NULL) {
         *result = NOT_MATCH;
@@ -148,13 +148,9 @@ const char *relocate_path(const char *path, int *result) {
                 ///remove last ///
 
                 std::string redirect_path(item.new_path, 0, item.new_size - 1);
-                if (strstr(path, ".so")) {
-                    ALOGD("BUG 2HERE");
-                }
 
 
-                //ALOGD("%s-%s", item.new_path, path);
-                //ALOGD("BUG2HERE");
+
                 return strdup(redirect_path.c_str());
             } else {
                 // 這段代碼作廢.暫時型的 ----start

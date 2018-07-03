@@ -684,8 +684,8 @@ void hook_dlopen(int api_level) {
     } else if (api_level >= 19) {
         if (findSymbol("__dl__Z9do_dlopenPKciPK17android_dlextinfo", "linker",
                        (unsigned long *) &symbol) == 0) {
-            MSHookFunction(symbol, (void *) new_do_dlopen_V19,
-                          (void **) &orig_do_dlopen_V19);
+            MSHookFunction(symbol, (void *) new_do_dlopen_V24,
+                          (void **) &orig_do_dlopen_V24);
         }
     } else {
         if (findSymbol("__dl_dlopen", "linker",

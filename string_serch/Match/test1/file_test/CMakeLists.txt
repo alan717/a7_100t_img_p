@@ -6,7 +6,7 @@ set(BOOST_ROOT "D:\\etc\\boost_1_67_0")
   set(Boost_USE_DEBUG_LIBS         ON) # ignore debug libs and
   set(Boost_USE_RELEASE_LIBS       OFF)  # only find release libs
   set(Boost_USE_MULTITHREADED      ON)
-  set(Boost_USE_STATIC_RUNTIME    ON)
+  set(Boost_USE_STATIC_RUNTIME    OFF)
 find_package(Boost REQUIRED    )
 
 FILE(GLOB_RECURSE SRC_LIST ${PROJECT_SOURCE_DIR}/*.cpp)
@@ -16,6 +16,7 @@ if(Boost_FOUND)
  
 	 set(Boost_USE_DEBUG_LIBS ON)
 	 #打印一下简单的消息
+	 message(STATUS "${Boost_FIND_COMPONENTS};okay")
 	 message( STATUS "${Boost_INCLUDE_DIRS};\n${Boost_LIBRARY_DIRS};\n${Boost_LIBRARIES};\n${Boost_VERSION}")
 	 message( STATUS "${Boost_LIB_VERSION};\n${Boost_MAJOR_VERSION};\n${Boost_MINOR_VERSION};\n${Boost_LIB_DIAGNOSTIC_DEFINITIONS};\n")
 endif()

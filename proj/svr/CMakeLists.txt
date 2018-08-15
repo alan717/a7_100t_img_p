@@ -17,7 +17,7 @@ set(Boost_USE_MULTITHREADED			ON)
 set(Boost_USE_STATIC_RUNTIME		OFF)
 #set(Boost_USE_RELEASE_LIBS			ON) 
 add_definitions(-D_MT)
-find_package(Boost 1.67.0  COMPONENTS system  regex date_time  )
+find_package(Boost 1.67.0  COMPONENTS system  regex date_time thread )
 
  
 if(Boost_FOUND)

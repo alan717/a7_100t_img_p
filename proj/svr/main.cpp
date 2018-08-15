@@ -2,30 +2,43 @@
 #include<boost/asio.hpp>
 #include<boost/bind.hpp>
 
-void print(const boost::system::error_code& e,
-	boost::asio::steady_timer* t,
-	int* count)
+class printer
 {
-
-	if (*count < 5)
+public:
+	printer(boost::asio::io_context& io)
+		: timer_(io, boost::asio::chrono::seconds(1)),
+		count_(0)
 	{
-		std::cout << *count << std::endl;
-		++(*count);
-
-		t->expires_at(t->expiry() + boost::asio::chrono::seconds(1));
-		t->async_wait(boost::bind(print,
-			boost::asio::placeholders::error, t, count));
+		timer_.async_wait(boost::bind(&printer::print, this));
 	}
-}
+
+	~printer()
+	{
+		std::cout << "Final count is " << count_ << std::endl;
+	}
+
+	void print()
+	{
+		if (count_ < 5)
+		{
+			std::cout << count_ << std::endl;
+			++count_;
+
+			timer_.expires_at(timer_.expiry() + boost::asio::chrono::seconds(1));
+			timer_.async_wait(boost::bind(&printer::print, this));
+		}
+	}
+
+private:
+	boost::asio::steady_timer timer_;
+	int count_;
+};
+
 int main()
 {
 	boost::asio::io_context io;
-	boost::asio::steady_timer t(io, boost::asio::chrono::seconds(5));
-	//t.wait();
-	int count = 0;
-	t.async_wait(boost::bind(print, boost::asio::placeholders::error, &t, &count));
-	
-	//std::cout << "hello wordl" << std::endl;
+	printer p(io);
 	io.run();
+
 	return 0;
 }

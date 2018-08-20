@@ -1,45 +1,62 @@
 #include <tut/tut.hpp>
-#include <tut/tut_console_reporter.hpp>
-#include <tut/tut_main.hpp>
+#include <set>
+#include <algorithm>
 
-#include <iostream>
+using std::set;
 
 namespace tut
 {
-	test_runner_singleton runner;
+
+	struct set_basic
+	{
+		set<int> s;
+
+		set_basic() : s() { }
+		virtual ~set_basic() { }
+	};
+
+	typedef test_group<set_basic> factory;
+	typedef factory::object object;
 }
 
-int main(int argc, const char* argv[])
+namespace
 {
-	tut::console_reporter reporter;
-	tut::runner.get().set_callback(&reporter);
 
-	try
+	tut::factory tf("std::set basic operations");
+
+}
+
+namespace tut
+{
+	/**
+	* Checks insert operation
+	*/
+	template<>
+	template<>
+	void object::test<1>()
 	{
-		if (tut::tut_main(argc, argv))
-		{
-			if (reporter.all_ok())
-			{
-				return 0;
-			}
-			else
-			{
-				std::cerr << "\nFAILURE and EXCEPTION in these tests are FAKE ;)" << std::endl;
-			}
-		}
-	}
-	catch (const tut::no_such_group &ex)
-	{
-		std::cerr << "No such group: " << ex.what() << std::endl;
-	}
-	catch (const tut::no_such_test &ex)
-	{
-		std::cerr << "No such test: " << ex.what() << std::endl;
-	}
-	catch (const tut::tut_error &ex)
-	{
-		std::cout << "General error: " << ex.what() << std::endl;
+		s.insert(s.end(), 100);
+		ensure(s.find(100) != s.end());
 	}
 
+	/**
+	* Checks clear operation
+	*/
+	template<>
+	template<>
+	void object::test<2>()
+	{
+		s.clear();
+		ensure_equals("size is 0", s.size(), 0U);
+		ensure("empty", s.empty());
+
+		// imitate failure of container implementation
+		ensure("s.end() == s.begin()", s.end() != s.begin());
+	}
+
+}
+int main()
+
+{
 	return 0;
 }

@@ -12,5 +12,9 @@ int main()
 	// as "arr[i]".  For example arr1[0] gives us 'g'
 	// and arr2[3] gives us 40.
 	std::cout << "hello world " << std::endl;
+	char* pPath;
+	pPath = getenv("PATH");
+	if (pPath != NULL)
+		printf("The current path is: %s", pPath);
 	return 0;
-}
+}	

@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCApplication1", "MFCApplication1\MFCApplication1.vcxproj", "{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCApplication2", "MFCApplication2\MFCApplication2.vcxproj", "{A85C17E2-23FC-4826-BF01-3063E367DED3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DIALOGS", "DIALOGS\DIALOGS.vcxproj", "{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lualib", "lualib\lualib.vcxproj", "{0ED8E591-0CE0-410F-A8D8-910AC685D359}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcxproj", "{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359} = {0ED8E591-0CE0-410F-A8D8-910AC685D359}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luac", "luac\luac.vcxproj", "{484DF4B2-A5B8-4592-B91B-878A4361BFA4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGlDemo", "OpenGlDemo\OpenGlDemo.vcxproj", "{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Debug|x64.ActiveCfg = Debug|x64
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Debug|x64.Build.0 = Debug|x64
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Debug|x86.ActiveCfg = Debug|Win32
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Debug|x86.Build.0 = Debug|Win32
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Release|x64.ActiveCfg = Release|x64
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Release|x64.Build.0 = Release|x64
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Release|x86.ActiveCfg = Release|Win32
+		{12BF078E-4AA1-4E9C-89C9-2A1155BA4D1A}.Release|x86.Build.0 = Release|Win32
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Debug|x64.ActiveCfg = Debug|x64
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Debug|x64.Build.0 = Debug|x64
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Debug|x86.ActiveCfg = Debug|Win32
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Debug|x86.Build.0 = Debug|Win32
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Release|x64.ActiveCfg = Release|x64
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Release|x64.Build.0 = Release|x64
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Release|x86.ActiveCfg = Release|Win32
+		{A85C17E2-23FC-4826-BF01-3063E367DED3}.Release|x86.Build.0 = Release|Win32
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Debug|x64.ActiveCfg = Debug|x64
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Debug|x64.Build.0 = Debug|x64
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Debug|x86.ActiveCfg = Debug|Win32
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Debug|x86.Build.0 = Debug|Win32
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Release|x64.ActiveCfg = Release|x64
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Release|x64.Build.0 = Release|x64
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Release|x86.ActiveCfg = Release|Win32
+		{84AE535E-DEF2-4906-B4A3-B46CC8AFC251}.Release|x86.Build.0 = Release|Win32
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Debug|x64.ActiveCfg = Debug|x64
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Debug|x64.Build.0 = Debug|x64
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Debug|x86.ActiveCfg = Debug|Win32
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Debug|x86.Build.0 = Debug|Win32
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Release|x64.ActiveCfg = Release|x64
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Release|x64.Build.0 = Release|x64
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Release|x86.ActiveCfg = Release|Win32
+		{0ED8E591-0CE0-410F-A8D8-910AC685D359}.Release|x86.Build.0 = Release|Win32
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Debug|x64.ActiveCfg = Debug|x64
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Debug|x64.Build.0 = Debug|x64
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Debug|x86.ActiveCfg = Debug|Win32
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Debug|x86.Build.0 = Debug|Win32
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Release|x64.ActiveCfg = Release|x64
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Release|x64.Build.0 = Release|x64
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Release|x86.ActiveCfg = Release|Win32
+		{9FB5A8A2-5A2A-445B-9A4D-EC4F1299240E}.Release|x86.Build.0 = Release|Win32
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Debug|x64.ActiveCfg = Debug|x64
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Debug|x64.Build.0 = Debug|x64
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Debug|x86.ActiveCfg = Debug|Win32
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Debug|x86.Build.0 = Debug|Win32
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Release|x64.ActiveCfg = Release|x64
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Release|x64.Build.0 = Release|x64
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Release|x86.ActiveCfg = Release|Win32
+		{484DF4B2-A5B8-4592-B91B-878A4361BFA4}.Release|x86.Build.0 = Release|Win32
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Debug|x64.ActiveCfg = Debug|x64
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Debug|x64.Build.0 = Debug|x64
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Debug|x86.ActiveCfg = Debug|Win32
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Debug|x86.Build.0 = Debug|Win32
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Release|x64.ActiveCfg = Release|x64
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Release|x64.Build.0 = Release|x64
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Release|x86.ActiveCfg = Release|Win32
+		{48FFC91E-50DA-46C4-AEDA-C000B15D40F0}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A9CE540-F66C-45A9-9955-57A52DD4EBAB}
+	EndGlobalSection
+EndGlobal

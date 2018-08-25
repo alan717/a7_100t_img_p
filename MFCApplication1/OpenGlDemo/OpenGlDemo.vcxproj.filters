@@ -15,22 +15,211 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aabb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bmpreader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cookbookogl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="drawable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gl_core_4_3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="glad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="glslprogram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="glutils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="khrplatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="objmesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic_attrib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic_debug.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic_uniform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic_uniformblock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenerunner.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="teapot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="teapotdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="teapotpatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="torus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trianglemesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vbocube.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vbomesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vbomeshadj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vboplane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vboteapot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vboteapotpatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vbotorus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="gl_core_4_3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bmpreader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="drawable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glslprogram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glutils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="objmesh.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OpenGlDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ClCompile Include="plane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebasic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebasic_attrib.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebasic_debug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebasic_uniform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebasic_uniformblock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="teapot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="teapotpatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="torus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="trianglemesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vbocube.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vbomesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vbomeshadj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vboplane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vboteapot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vboteapotpatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vbotorus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

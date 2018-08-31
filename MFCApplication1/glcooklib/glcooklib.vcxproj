@@ -117,52 +117,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bmpreader.cpp" />
-    <ClCompile Include="drawable.cpp" />
-    <ClCompile Include="glad.c" />
-    <ClCompile Include="glslprogram.cpp" />
-    <ClCompile Include="glutils.cpp" />
-    <ClCompile Include="gl_core_4_3.c" />
-    <ClCompile Include="vbocube.cpp" />
-    <ClCompile Include="vbomesh.cpp" />
-    <ClCompile Include="vbomeshadj.cpp" />
-    <ClCompile Include="vboplane.cpp" />
-    <ClCompile Include="vboteapot.cpp" />
-    <ClCompile Include="vboteapotpatch.cpp" />
-    <ClCompile Include="vbotorus.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="aabb.h" />
-    <ClInclude Include="bmpreader.h" />
-    <ClInclude Include="cookbookogl.h" />
-    <ClInclude Include="cube.h" />
-    <ClInclude Include="defines.h" />
-    <ClInclude Include="drawable.h" />
-    <ClInclude Include="glad.h" />
-    <ClInclude Include="glslprogram.h" />
-    <ClInclude Include="glutils.h" />
-    <ClInclude Include="gl_core_4_3.h" />
-    <ClInclude Include="objmesh.h" />
-    <ClInclude Include="plane.h" />
-    <ClInclude Include="scene.h" />
-    <ClInclude Include="scenerunner.h" />
-    <ClInclude Include="sphere.h" />
-    <ClInclude Include="teapot.h" />
-    <ClInclude Include="teapotdata.h" />
-    <ClInclude Include="teapotpatch.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="torus.h" />
-    <ClInclude Include="trianglemesh.h" />
-    <ClInclude Include="utils.h" />
-    <ClInclude Include="vbocube.h" />
-    <ClInclude Include="vbomesh.h" />
-    <ClInclude Include="vbomeshadj.h" />
-    <ClInclude Include="vboplane.h" />
-    <ClInclude Include="vboteapot.h" />
-    <ClInclude Include="vboteapotpatch.h" />
-    <ClInclude Include="vbotorus.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

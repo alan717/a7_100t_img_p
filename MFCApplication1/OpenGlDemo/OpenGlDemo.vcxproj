@@ -154,12 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
+    <ClCompile Include="glutils.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="scenebasic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glad.h" />
     <ClInclude Include="glutils.h" />
+    <ClInclude Include="khrplatform.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="scenebasic.h" />
     <ClInclude Include="scenerunner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

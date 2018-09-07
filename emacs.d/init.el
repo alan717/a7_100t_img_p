@@ -8,8 +8,8 @@
 
 ;;
 ;;;(require 'smex)
-(require 'flycheck-rtags)
-(
+;;(require 'flycheck-rtags)
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -21,7 +21,8 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 (require 'req-package)
-
+(setq url-proxy-services '(("no_proxy" . "baidu.com")
+                           ("http" . "127.0.0.1:8118")))
 
 
 
@@ -35,7 +36,7 @@
     ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+    (window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,6 +46,11 @@
 
 (package-install-selected-packages)
 ;; config company
+(req-package window-numbering
+  :config
+  (progn
+    (add-hook 'after-init-hook 'window-numbering-mode)
+    ))
 
 (req-package company
 	     :config
@@ -105,73 +111,74 @@
 (req-package rtags
   :config
   (progn
-
+    ;;    (customize-variable 'rtags-path "/home/ququ/.emacs.d/rtags/bin")
+    (set-variable 'rtags-path "/home/ququ/.emacs.d/rtags/bin")
     ;;funclis
     (defun use-rtags (&optional useFileManager)
-  (and (rtags-executable-find "rc")
-       (cond ((not (gtags-get-rootpath)) t)
-             ((and (not (eq major-mode 'c++-mode))
-                   (not (eq major-mode 'c-mode))) (rtags-has-filemanager))
-             (useFileManager (rtags-has-filemanager))
-             (t (rtags-is-indexed)))))
+      (and (rtags-executable-find "rc")
+	   (cond ((not (gtags-get-rootpath)) t)
+		 ((and (not (eq major-mode 'c++-mode))
+		       (not (eq major-mode 'c-mode))) (rtags-has-filemanager))
+		 (useFileManager (rtags-has-filemanager))
+		 (t (rtags-is-indexed)))))
 
-(defun tags-find-symbol-at-point (&optional prefix)
-  (interactive "P")
-  (if (and (not (rtags-find-symbol-at-point prefix)) rtags-last-request-not-indexed)
-      (gtags-find-tag)))
-(defun tags-find-references-at-point (&optional prefix)
-  (interactive "P")
-  (if (and (not (rtags-find-references-at-point prefix)) rtags-last-request-not-indexed)
-      (gtags-find-rtag)))
-(defun tags-find-symbol ()
-  (interactive)
-  (call-interactively (if (use-rtags) 'rtags-find-symbol 'gtags-find-symbol)))
-(defun tags-find-references ()
-  (interactive)
-  (call-interactively (if (use-rtags) 'rtags-find-references 'gtags-find-rtag)))
-(defun tags-find-file ()
-  (interactive)
-  (call-interactively (if (use-rtags t) 'rtags-find-file 'gtags-find-file)))
-(defun tags-imenu ()
-  (interactive)
-  (call-interactively (if (use-rtags t) 'rtags-imenu 'idomenu)))
-
+    (defun tags-find-symbol-at-point (&optional prefix)
+      (interactive "P")
+      (if (and (not (rtags-find-symbol-at-point prefix)) rtags-last-request-not-indexed)
+	  (gtags-find-tag)))
+    (defun tags-find-references-at-point (&optional prefix)
+      (interactive "P")
+      (if (and (not (rtags-find-references-at-point prefix)) rtags-last-request-not-indexed)
+	  (gtags-find-rtag)))
+    (defun tags-find-symbol ()
+      (interactive)
+      (call-interactively (if (use-rtags) 'rtags-find-symbol 'gtags-find-symbol)))
+    (defun tags-find-references ()
+      (interactive)
+      (call-interactively (if (use-rtags) 'rtags-find-references 'gtags-find-rtag)))
+    (defun tags-find-file ()
+      (interactive)
+      (call-interactively (if (use-rtags t) 'rtags-find-file 'gtags-find-file)))
+    (defun tags-imenu ()
+      (interactive)
+      (call-interactively (if (use-rtags t) 'rtags-imenu 'idomenu)))
+    
     (define-key c-mode-base-map (kbd "M-.") (function tags-find-symbol-at-point))
-
+    
     (define-key c-mode-base-map (kbd "M-,") (function tags-find-references-at-point))
-
+    
     (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
-
+    
     (define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
-
+    
     (define-key c-mode-base-map (kbd "C-,") (function tags-find-references))
 
     (define-key c-mode-base-map (kbd "C-<") (function rtags-find-virtuals-at-point))
-
+    
     (define-key c-mode-base-map (kbd "M-i") (function tags-imenu))
-
-
+    
+    
     (define-key global-map (kbd "M-.") (function tags-find-symbol-at-point))
-
+    
     (define-key global-map (kbd "M-,") (function tags-find-references-at-point))
-
+    
     (define-key global-map (kbd "M-;") (function tags-find-file))
-
+    
     (define-key global-map (kbd "C-.") (function tags-find-symbol))
-
+    
     (define-key global-map (kbd "C-,") (function tags-find-references))
-
+    
     (define-key global-map (kbd "C-<") (function rtags-find-virtuals-at-point))
-
+    
     (define-key global-map (kbd "M-i") (function tags-imenu))
-
+    
     (define-key c-mode-base-map (kbd "<C-tab>") (function company-complete))
-;    (define-key c-mode-base-map
-
+					;    (define-key c-mode-base-map
+    
     (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
     (unless (rtags-executable-find "rdm") (error "Binary rdm is not installed!"))
-    (setq rtags-path "/home/ququ/.emacs.d/rtags/bin")
 
+    
     (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
     (add-hook 'c++-mode 'rtags-start-process-unless-running)
     (setq rtags-autostart-diagnostics t)
@@ -181,8 +188,8 @@
     (rtags-restart-process)
     
     
-;;    (setq rtags-use-helm t)
-
+    ;;    (setq rtags-use-helm t)
+    
     ;; Shutdown rdm when leaving emacs.
     (add-hook 'kill-emacs-hook 'rtags-quit-rdm)
     ))
@@ -201,7 +208,7 @@
   :config
   (progn
     (setq rtags-autostart-diagnostics t)
-;;    (setq rtags-autostart-diagnostics
+    ;;    (setq rtags-autostart-diagnostics
     (rtags-diagnostics)
     (setq rtags-completions-enabled t)
     (push 'company-rtags company-backends)

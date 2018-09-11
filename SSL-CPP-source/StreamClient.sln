@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StreamClient", "StreamClient\StreamClient.vcxproj", "{71D079B7-91C6-4CA2-8BFE-E369835DA8F3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StreamServer", "StreamServer\StreamServer.vcxproj", "{287B68D2-7381-4E78-AC72-79A49738228D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71D079B7-91C6-4CA2-8BFE-E369835DA8F3}.Debug|x86.ActiveCfg = Debug|Win32
+		{71D079B7-91C6-4CA2-8BFE-E369835DA8F3}.Debug|x86.Build.0 = Debug|Win32
+		{71D079B7-91C6-4CA2-8BFE-E369835DA8F3}.Release|x86.ActiveCfg = Release|Win32
+		{71D079B7-91C6-4CA2-8BFE-E369835DA8F3}.Release|x86.Build.0 = Release|Win32
+		{287B68D2-7381-4E78-AC72-79A49738228D}.Debug|x86.ActiveCfg = Debug|Win32
+		{287B68D2-7381-4E78-AC72-79A49738228D}.Debug|x86.Build.0 = Debug|Win32
+		{287B68D2-7381-4E78-AC72-79A49738228D}.Release|x86.ActiveCfg = Release|Win32
+		{287B68D2-7381-4E78-AC72-79A49738228D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F654E5A-8C4E-4111-90AC-FFC3548727AD}
+	EndGlobalSection
+EndGlobal

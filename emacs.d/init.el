@@ -5,7 +5,8 @@
 (add-to-list 'package-archives
          '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'load-path "~/.emacs.d/my/")
-
+(setq url-proxy-services '(("no_proxy" . "baidu.com")
+                           ("http" . "127.0.0.1:8118")))
 ;;
 ;;;(require 'smex)
 ;;(require 'flycheck-rtags)
@@ -17,12 +18,11 @@
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
-
 (require 'use-package)
+
 (setq use-package-always-ensure t)
-(require 'req-package)
-(setq url-proxy-services '(("no_proxy" . "baidu.com")
-                           ("http" . "127.0.0.1:8118")))
+
+
 
 
 
@@ -36,7 +36,7 @@
     ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+    (popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,6 +45,12 @@
  )
 
 (package-install-selected-packages)
+(require 'req-package)
+;; pop-win setting
+;;
+(require 'popwin)
+(popwin-mode 1)
+
 ;; config company
 (req-package window-numbering
   :config
@@ -65,6 +71,12 @@
     (global-flycheck-mode))
   )
 
+(req-package popwin
+  :config
+  (progn
+    ;; (add-hook 'after-init-hook 'popwin-mode
+    (global-set-key (kbd "C-z") popwin:keymap)
+    ))
 
 
 
@@ -142,11 +154,11 @@
     (defun tags-imenu ()
       (interactive)
       (call-interactively (if (use-rtags t) 'rtags-imenu 'idomenu)))
-    
-    (define-key c-mode-base-map (kbd "M-.") (function tags-find-symbol-at-point))
-    
-    (define-key c-mode-base-map (kbd "M-,") (function tags-find-references-at-point))
-    
+
+    (define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
+    (define-key c-mode-base-map (kbd "M-,") 'rtags-location-stack-back)
+    (define-key c-mode-base-map (kbd "M-m") 'rtags-find-references-at-point)
+;;    (define-key c-mode-base-map (kbd "M-"
     (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
     
     (define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
@@ -259,3 +271,5 @@
 ;;(use-package moe-theme
 ;;  :ensure t
 ;;  :config
+(global-set-key (kbd "M-g") 'goto-line)
+;;(global-set-key 

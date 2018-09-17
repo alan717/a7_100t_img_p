@@ -36,7 +36,7 @@
     ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+     ( subr-x popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -159,7 +159,8 @@
     (define-key c-mode-base-map (kbd "M-,") 'rtags-location-stack-back)
     (define-key c-mode-base-map (kbd "M-m") 'rtags-find-references-at-point)
 ;;    (define-key c-mode-base-map (kbd "M-"
-    (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
+    (define-key c-mode-base-map (kbd "M-;") 'rtags-find-file)
+;;    (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
     
     (define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
     
@@ -189,10 +190,35 @@
     
     (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
     (unless (rtags-executable-find "rdm") (error "Binary rdm is not installed!"))
-
+    (defun fontify-string (str mode)
+      "Return STR fontified according to MODE."
+      (with-temp-buffer
+	(insert str)
+	(delay-mode-hooks (funcall mode))
+	(font-lock-default-function mode)
+	(font-lock-default-fontify-region (point-min) (point-max) nil)
+	(buffer-string )))
+    (defun rtags-eldoc-function()
+      (let ((summary (rtags-get-summary-text)))
+	(and summary
+	     (fontify-string
+	      (replace-regexp-in-string
+	       "{{^}}*$" ""
+	       (mapconcat
+		(lambda (str) (if (= 0 (length str)) "//" (string-trim str )))
+		(split-string summary "\r?\n")
+		"  "))
+	      major-mode))))
+      )
+    (defun rtags-eldoc-mode()
+      (interactive)
+      (setq-local eldoc-documentation-function #'rtags-eldoc-function)
+      (eldoc-mode 1))
     
     (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
     (add-hook 'c++-mode 'rtags-start-process-unless-running)
+    (add-hook 'c-mode-hook 'rtags-eldoc-mode)
+    (add-hook 'c++-mode-hook 'rtags-eldoc-mode)
     (setq rtags-autostart-diagnostics t)
     (setq rtags-completions-enabled t)
     (rtags-diagnostics)
@@ -204,7 +230,7 @@
     
     ;; Shutdown rdm when leaving emacs.
     (add-hook 'kill-emacs-hook 'rtags-quit-rdm)
-    ))
+    )
 
 ;; TODO: Has no coloring! How can I get coloring?
 ;; (req-package helm-rtags

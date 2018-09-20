@@ -33,10 +33,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-     ( subr-x popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+    (subr-x popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -123,8 +123,9 @@
 (req-package rtags
   :config
   (progn
-    ;;    (customize-variable 'rtags-path "/home/ququ/.emacs.d/rtags/bin")
-    (set-variable 'rtags-path "/home/ququ/.emacs.d/rtags/bin")
+    
+    ;;(set-variable 'rtags-path "/home/ququ/.emacs.d/rtags/bin")
+    (set-variable 'rtags-path "/home/poi/.emacs.d/rtags/bin")
     ;;funclis
     (defun use-rtags (&optional useFileManager)
       (and (rtags-executable-find "rc")
@@ -154,15 +155,16 @@
     (defun tags-imenu ()
       (interactive)
       (call-interactively (if (use-rtags t) 'rtags-imenu 'idomenu)))
-
+;; RTAGS 设置键位
     (define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
     (define-key c-mode-base-map (kbd "M-,") 'rtags-location-stack-back)
     (define-key c-mode-base-map (kbd "M-m") 'rtags-find-references-at-point)
-;;    (define-key c-mode-base-map (kbd "M-"
+    ;;(define-key c-mode-base-map (kbd "M-"
     (define-key c-mode-base-map (kbd "M-;") 'rtags-find-file)
-;;    (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
-    
-    (define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
+    ;;(define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
+    (define-key c-mode-base-map (kbd "M-<down>") 'rtags-next-match)
+    ;;(define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
+    (define-key c-mode-base-map (kbd "C-.") 'rtags-find-symbol)
     
     (define-key c-mode-base-map (kbd "C-,") (function tags-find-references))
 
@@ -221,6 +223,7 @@
     (add-hook 'c++-mode-hook 'rtags-eldoc-mode)
     (setq rtags-autostart-diagnostics t)
     (setq rtags-completions-enabled t)
+
     (rtags-diagnostics)
     (rtags-enable-standard-keybindings)
     (rtags-restart-process)
@@ -299,3 +302,8 @@
 ;;  :config
 (global-set-key (kbd "M-g") 'goto-line)
 ;;(global-set-key 
+
+(setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq c-default-style "Linux")
+(setq c-basic-offset 4)

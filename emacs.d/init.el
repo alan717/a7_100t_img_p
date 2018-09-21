@@ -1,26 +1,32 @@
-;;; package-sumary:
+;; package-sumary:
+(setq inhibit-startup-message t)
 
 (require 'package)
 ;;;code
+(setq package-enable-at-startup nil)
+
 (add-to-list 'package-archives
-         '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'load-path "~/.emacs.d/my/")
+             '("melpa" . "http://melpa.org/packages/"))
+
+
 (setq url-proxy-services '(("no_proxy" . "baidu.com")
                            ("http" . "127.0.0.1:8118")))
+(add-to-list 'load-path "~/.emacs.d/my/")
 ;;
 ;;;(require 'smex)
 ;;(require 'flycheck-rtags)
-
 (package-initialize)
 
 (when (not package-archive-contents)
     (package-refresh-contents))
 
 (unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
+
 (require 'use-package)
 
-(setq use-package-always-ensure t)
+;;(setq use-package-always-ensure t)
 
 
 
@@ -36,7 +42,7 @@
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (subr-x popwin window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme smex org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+    (counsel-projectile color-theme yasnippet avy counsel ivy  subr-x  window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme  org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,10 +52,9 @@
 
 (package-install-selected-packages)
 (require 'req-package)
-;; pop-win setting
-;;
-(require 'popwin)
-(popwin-mode 1)
+
+
+
 
 ;; config company
 (req-package window-numbering
@@ -71,12 +76,6 @@
     (global-flycheck-mode))
   )
 
-(req-package popwin
-  :config
-  (progn
-    ;; (add-hook 'after-init-hook 'popwin-mode
-    (global-set-key (kbd "C-z") popwin:keymap)
-    ))
 
 
 
@@ -155,7 +154,7 @@
     (defun tags-imenu ()
       (interactive)
       (call-interactively (if (use-rtags t) 'rtags-imenu 'idomenu)))
-;; RTAGS 设置键位
+    ;; RTAGS 设置键位
     (define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
     (define-key c-mode-base-map (kbd "M-,") 'rtags-location-stack-back)
     (define-key c-mode-base-map (kbd "M-m") 'rtags-find-references-at-point)
@@ -278,22 +277,64 @@
 (req-package projectile
   :config
   (progn
-    (projectile-global-mode)
+    (projectile-global-mode)))
+
+(req-package ivy
+  :config
+  (progn
+    (add-hook 'after-init-hook 'ivy-mode)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d%d) ")
+    (global-set-key (kbd "C-s") 'swiper)
+    (global-set-key (kbd "M-x") 'counsel-M-x)
+    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+    (global-set-key (kbd "<f1> l") 'counsel-find-library)
+    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+    (global-set-key (kbd "C-c C-r") 'ivy-resume)
+    ;;    (global-set-key (kbd "C-v") 'ivy-scroll-down-command)
+    ;;    (global-set-key (kbd "M-v") 'ivy-scroll-up-command)
+    ))
+(req-package avy
+  :config
+  (progn
+    (add-hook 'after-init-hook 'avy-setup-default)
+    (global-set-key (kbd "M-s") 'avy-goto-char)
     ))
 
-
-
-
+(req-package undo-tree
+  :config
+  (progn
+    (global-undo-tree-mode)
+    ))
+(req-package yasnippet
+  :config
+  (progn
+    (yas-global-mode 1)
+    ))
+(req-package color-theme
+  :config
+  (progn
+    ;;(color-theme-mode)
+    ))
+(req-package counsel-projectile
+  :config
+  (progn
+    (counsel-projectile-on)
+    ))
 (req-package-finish)
-
+;;req-package ending 
+(global-hl-line-mode t)
 (global-linum-mode t)
 ;;;init.el end here
+(setq projectile-completion-system 'ivy)
+(load-theme 'moe-dark t)
 
-(load-theme 'manoj-dark t)
 
 
-(smex-initialize)
-;;(smex t)
+
 ;;(use-package com
 ;;(load-theme 'solarized-dark t)
 (nyan-mode t)
@@ -307,3 +348,12 @@
 (setq-default indent-tabs-mode nil)
 (setq c-default-style "Linux")
 (setq c-basic-offset 4)
+;;关闭工具栏
+(tool-bar-mode -1)
+;;ido mode 
+;;(setq ido-enable-flex-matching t)
+;;(setq ido-everywhere t)
+;;(ido-mode 1)
+;;(defalias 'list-buffers 'ibuffer)
+
+

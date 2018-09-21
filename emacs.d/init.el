@@ -42,7 +42,7 @@
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (counsel-projectile color-theme yasnippet avy counsel ivy  subr-x  window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme  org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
+    (dracula-theme  counsel-projectile  yasnippet avy counsel ivy  subr-x  window-numbering company-rtags flycheck-rtags moe-theme nyan-mode solarized-theme  org-mode projectile cmake-mode irony company-irony flycheck-irony irony-eldoc yasnippet use-package undo-tree counsel-projectile company anzu req-package flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,7 +52,6 @@
 
 (package-install-selected-packages)
 (require 'req-package)
-
 
 
 
@@ -314,11 +313,7 @@
   (progn
     (yas-global-mode 1)
     ))
-(req-package color-theme
-  :config
-  (progn
-    ;;(color-theme-mode)
-    ))
+
 (req-package counsel-projectile
   :config
   (progn
@@ -330,7 +325,8 @@
 (global-linum-mode t)
 ;;;init.el end here
 (setq projectile-completion-system 'ivy)
-(load-theme 'moe-dark t)
+;;(load-theme 'moe-dark t)
+(load-theme 'dracula t)
 
 
 

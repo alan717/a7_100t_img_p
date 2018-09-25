@@ -1,0 +1,73 @@
+!!$HOME/.Xresources
+URxvt.preeditType:Root
+!!调整此处设置输入法
+URxvt.inputMethod:fcitx
+!!颜色设置
+URxvt.depth:32
+!!中括号内数表示透明度
+!URxvt.inheritPixmap:true
+URxvt.background:#000000
+URxvt.foreground:#ffffff
+URxvt.colorBD:Gray95
+URxvt.colorUL:Green
+URxvt.color1:Red2
+URxvt.color4:RoyalBlue
+URxvt.color5:Magenta2
+URxvt.color8:Gray50
+URxvt.color10:Green2
+URxvt.color12: rgb:5c/5c/ff
+
+!!URxvt.color12:DodgerBlue
+URxvt.color14:Cyan2
+URxvt.color15:Gray95
+!!URL操作
+URxvt.urlLauncher:firefox
+URxvt.matcher.button:1
+Urxvt.perl-ext-common:matcher
+!!滚动条设置
+URxvt.scrollBar:False
+URxvt.scrollBar_floating:False
+URxvt.scrollstyle:plain
+
+!!滚屏设置
+URxvt.mouseWheelScrollPage:True
+URxvt.scrollTtyOutput:False
+URxvt.scrollWithBuffer:True
+URxvt.scrollTtyKeypress:True
+!!光标闪烁
+URxvt.cursorBlink:True
+URxvt.saveLines:3000
+!!边框
+URxvt.borderLess:False
+!!字体设置
+Xft.dpi:100
+!!URxvt.font: xft:monospace:size=10
+!!URxvt.font: 9x15
+URxvt.font: xft:SourceCodePro-Regular:size=10
+!!URxvt.font: xft:wqy-zenhei:antialias:True:Mono:style=Regular:size=10
+!!Mono:style=Regular
+
+URxvt.letterSpace: 0
+
+!!URxvt.boldfont:xft:wqy-microhei:antialias=True:pixelsize=18
+
+
+
+! ----------------------------------------------------------------------------
+! ROFI Color theme
+! ----------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+
+
+
+!!Xft.dpi: 480
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

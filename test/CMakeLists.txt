@@ -1,0 +1,4 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+PROJECT(test)
+SET(SRC_LIST priorityque.cpp)
+add_executable(${PROJECT_NAME} ${SRC_LIST})

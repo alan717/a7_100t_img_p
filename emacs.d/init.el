@@ -274,9 +274,14 @@
 
 
 (req-package projectile
+  :require ivy
   :config
   (progn
-    (projectile-global-mode)))
+    (projectile-global-mode)
+    (setq projectile-completion-system 'ivy)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    )
+  )
 
 (req-package ivy
   :config

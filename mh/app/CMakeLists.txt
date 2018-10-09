@@ -7,10 +7,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 
 set(SRC_LIST src/main/cpp/native-lib.cpp
-        src/main/cpp/Substrate/hde64.c
-        src/main/cpp/Substrate/SubstrateDebug.cpp
-        src/main/cpp/Substrate/SubstrateHook.cpp
-        src/main/cpp/Substrate/SubstratePosixMemory.cpp
+
         )
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -50,3 +47,7 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 INCLUDE_DIRECTORIES(src/main/cpp/Substrate/)
+set(ss src/main/cpp/native/main.cpp)
+add_executable(tester ${ss})
+target_link_libraries(tester ${log-lib})
+set(EXECUTABLE_OUTPUT_PATH src/main/cpp/native/${ANDROID_ABI}/)

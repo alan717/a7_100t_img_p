@@ -1,6 +1,7 @@
-game=com.tencent.tmgp.speedmobile/com.tencent.tmgp.speedmobile.speedmobile
+game=com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.WelcomeActivity
+fuck=com.sankuai.meituan.takeoutnew
 adb shell "am start -n $game " 1>/dev/null 2>&1
-gamepid=`adb shell ps | grep speed | awk 'NR=="1"{print $2}'`
+gamepid=`adb shell ps | grep $fuck | awk 'NR=="1"{print $2}'`
 echo "game:$game.PID:$gamepid"
 adb forward tcp:1234 tcp:1234
 adb forward tcp:12345 jdwp:12345

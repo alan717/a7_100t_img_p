@@ -151,16 +151,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
+    <ClCompile Include="glslprogram.cpp" />
     <ClCompile Include="glutils.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scenebasic.cpp" />
+    <ClCompile Include="scenebasic_attrib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glad.h" />
+    <ClInclude Include="glslprogram.h" />
     <ClInclude Include="glutils.h" />
     <ClInclude Include="khrplatform.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scenebasic.h" />
+    <ClInclude Include="scenebasic_attrib.h" />
     <ClInclude Include="scenerunner.h" />
   </ItemGroup>
   <ItemGroup>

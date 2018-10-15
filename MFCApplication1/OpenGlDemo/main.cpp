@@ -9,7 +9,7 @@
 //#include<glm/gtx/transform2.hpp>
 #include"scenerunner.h"
 #include"scenebasic.h"
-
+#include"scenebasic_attrib.h"
 
 
 #include<memory>
@@ -41,9 +41,9 @@ int main(int argc,char *argv[])
 	if (recipe == "basic") {
 		scene = std::unique_ptr<Scene>(new SceneBasic());
 	}
-	//else if (recipe == "basic-attrib") {
-	//	scene = std::unique_ptr<Scene>(new SceneBasic_Attrib());
-	//}
+	else if (recipe == "basic-attrib") {
+		scene = std::unique_ptr<Scene>(new SceneBasic_Attrib());
+	}
 	//else if (recipe == "basic-uniform") {
 	//	scene = std::unique_ptr<Scene>(new SceneBasic_Uniform());
 	//}

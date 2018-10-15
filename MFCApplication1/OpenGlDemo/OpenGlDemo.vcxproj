@@ -156,6 +156,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scenebasic.cpp" />
     <ClCompile Include="scenebasic_attrib.cpp" />
+    <ClCompile Include="scenebasic_uniform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glad.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="scene.h" />
     <ClInclude Include="scenebasic.h" />
     <ClInclude Include="scenebasic_attrib.h" />
+    <ClInclude Include="scenebasic_uniform.h" />
     <ClInclude Include="scenerunner.h" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@
 #include"scenerunner.h"
 #include"scenebasic.h"
 #include"scenebasic_attrib.h"
-
+#include "scenebasic_uniform.h"
 
 #include<memory>
 using glm::vec3;
@@ -44,9 +44,9 @@ int main(int argc,char *argv[])
 	else if (recipe == "basic-attrib") {
 		scene = std::unique_ptr<Scene>(new SceneBasic_Attrib());
 	}
-	//else if (recipe == "basic-uniform") {
-	//	scene = std::unique_ptr<Scene>(new SceneBasic_Uniform());
-	//}
+	else if (recipe == "basic-uniform") {
+		scene = std::unique_ptr<Scene>(new SceneBasic_Uniform());
+	}
 	//else if (recipe == "basic-uniform-block") {
 	//	scene = std::unique_ptr<Scene>(new SceneBasic_UniformBlock());
 	//}

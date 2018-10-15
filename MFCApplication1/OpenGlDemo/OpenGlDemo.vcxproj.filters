@@ -33,6 +33,9 @@
     <ClCompile Include="glslprogram.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="scenebasic_uniform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scenerunner.h">
@@ -57,6 +60,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="glslprogram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebasic_uniform.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

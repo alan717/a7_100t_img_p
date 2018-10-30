@@ -1,3 +1,0 @@
-/home/poi/working/a7_100t_img_p/test/CMakeFiles/rebuild_cache.dir
-/home/poi/working/a7_100t_img_p/test/CMakeFiles/test.dir
-/home/poi/working/a7_100t_img_p/test/CMakeFiles/edit_cache.dir

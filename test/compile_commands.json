@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/poi/working/a7_100t_img_p/test",
-  "command": "/usr/bin/c++      -o CMakeFiles/test.dir/priorityque.cpp.o -c /home/poi/working/a7_100t_img_p/test/priorityque.cpp",
-  "file": "/home/poi/working/a7_100t_img_p/test/priorityque.cpp"
-}
-]

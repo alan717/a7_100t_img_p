@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(dispatcher)
-
-set(CMAKE_CXX_STANDARD 14)
-
-add_executable(dispatcher main.cpp)
 include_directories(./)
+#set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/build/)
+set(CMAKE_CXX_STANDARD 14)
+add_executable(dispatcher main.cpp)

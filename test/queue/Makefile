@@ -79,14 +79,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\cur\a7_100t_img_p\test\CMakeFiles D:\cur\a7_100t_img_p\test\CMakeFiles\progress.marks
-	$(MAKE) -f CMakeFiles\Makefile2 all
+	cd /d D:\cur\a7_100t_img_p\test && $(CMAKE_COMMAND) -E cmake_progress_start D:\cur\a7_100t_img_p\test\CMakeFiles D:\cur\a7_100t_img_p\test\queue\CMakeFiles\progress.marks
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 queue/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\cur\a7_100t_img_p\test\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles\Makefile2 clean
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 queue/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,30 +96,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles\Makefile2 preinstall
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 queue/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles\Makefile2 preinstall
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 queue/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\cur\a7_100t_img_p\test && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named test
+# Convenience name for target.
+queue/CMakeFiles/test.dir/rule:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 queue/CMakeFiles/test.dir/rule
+.PHONY : queue/CMakeFiles/test.dir/rule
 
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 test
+# Convenience name for target.
+test: queue/CMakeFiles/test.dir/rule
+
 .PHONY : test
 
 # fast build rule for target.
 test/fast:
-	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/build
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f queue\CMakeFiles\test.dir\build.make queue/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 priorityque.obj: priorityque.cpp.obj
@@ -128,7 +130,7 @@ priorityque.obj: priorityque.cpp.obj
 
 # target to build an object file
 priorityque.cpp.obj:
-	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/priorityque.cpp.obj
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f queue\CMakeFiles\test.dir\build.make queue/CMakeFiles/test.dir/priorityque.cpp.obj
 .PHONY : priorityque.cpp.obj
 
 priorityque.i: priorityque.cpp.i
@@ -137,7 +139,7 @@ priorityque.i: priorityque.cpp.i
 
 # target to preprocess a source file
 priorityque.cpp.i:
-	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/priorityque.cpp.i
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f queue\CMakeFiles\test.dir\build.make queue/CMakeFiles/test.dir/priorityque.cpp.i
 .PHONY : priorityque.cpp.i
 
 priorityque.s: priorityque.cpp.s
@@ -146,7 +148,7 @@ priorityque.s: priorityque.cpp.s
 
 # target to generate assembly for a file
 priorityque.cpp.s:
-	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/priorityque.cpp.s
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f queue\CMakeFiles\test.dir\build.make queue/CMakeFiles/test.dir/priorityque.cpp.s
 .PHONY : priorityque.cpp.s
 
 # Help Target
@@ -172,6 +174,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\cur\a7_100t_img_p\test && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -30,7 +30,7 @@ int main(){
     auto& book = books.back();
     book.bookName = "红楼梦";
     book.price = 5; std::cout << endl; std::cout << "test emplace:" << endl; auto it = books.emplace(books.end()); it->bookName = "西游记"; it->price = 3; std::cout << endl; std::cout << "output all books: " << endl; for_each(books.begin(), books.end(), [](const SBook& book)->void { std::cout << book.bookName << endl; }); std::cout << endl;​ ​
-​ ​ // 测试set
+    // 测试set
 set<SBook> bookSet;​ ​ std::cout << "test bookSet insert:" << endl; bookSet.insert(SBook("十万个为什么", 1)); std::cout << endl; ​ ​std::cout<< "test bookSet emplace:" << endl; bookSet.emplace("新华字典", 2); std::cout << endl; ​ ​std::cout<< "output bookset: " << endl; for_each(bookSet.begin(), bookSet.end(), [](const SBook&book)->void { std::cout << book.bookName << endl; }); std::cout << endl;
 
 

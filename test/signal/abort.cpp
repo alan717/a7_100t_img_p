@@ -4,7 +4,7 @@
 
 int main ()
 {
-  FILE * pFile;
+  FILE *pFile;
   pFile= fopen ("myfile.txt","r");
   if (pFile == NULL)
   {

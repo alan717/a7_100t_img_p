@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="dispatcher"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\algorithms\;CMake Files\linux\;CMake Files\disptcher\;CMake Files\queue\;CMake Files\wins\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/cur/a7_100t_img_p/test/disptcher"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dispatcher">
+				<Option output="D:/cur/a7_100t_img_p/test/build/dispatcher.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/cur/a7_100t_img_p/test/build/"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DOS_WIN"/>
+					<Add directory="D:/cur/a7_100t_img_p/test/disptcher/."/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0/backward"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/include"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/include-fixed"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 dispatcher"/>
+					<CompileFile command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dispatcher/fast">
+				<Option output="D:/cur/a7_100t_img_p/test/build/dispatcher.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/cur/a7_100t_img_p/test/build/"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DOS_WIN"/>
+					<Add directory="D:/cur/a7_100t_img_p/test/disptcher/."/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0/x86_64-w64-mingw32"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include/c++/8.2.0/backward"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/include"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../include"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/include-fixed"/>
+					<Add directory="D:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 dispatcher/fast"/>
+					<CompileFile command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/cur/a7_100t_img_p/test/disptcher/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/cur/a7_100t_img_p/test/disptcher/main.cpp">
+			<Option target="dispatcher"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/algorithms/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\algorithms\"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/linux/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\linux\"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/disptcher/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\disptcher\"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/queue/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\queue\"/>
+		</Unit>
+		<Unit filename="D:/cur/a7_100t_img_p/test/wins/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\wins\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = D:\cur\a7_100t_img_p\test
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"D:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -124,32 +124,74 @@ bsearch/fast:
 	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/build
 .PHONY : bsearch/fast
 
-bsearch.obj: bsearch.cpp.obj
+# Convenience name for target.
+algorithms/CMakeFiles/binary_search.dir/rule:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f CMakeFiles\Makefile2 algorithms/CMakeFiles/binary_search.dir/rule
+.PHONY : algorithms/CMakeFiles/binary_search.dir/rule
 
-.PHONY : bsearch.obj
+# Convenience name for target.
+binary_search: algorithms/CMakeFiles/binary_search.dir/rule
+
+.PHONY : binary_search
+
+# fast build rule for target.
+binary_search/fast:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\binary_search.dir\build.make algorithms/CMakeFiles/binary_search.dir/build
+.PHONY : binary_search/fast
+
+src/binary_search.obj: src/binary_search.c.obj
+
+.PHONY : src/binary_search.obj
 
 # target to build an object file
-bsearch.cpp.obj:
-	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/bsearch.cpp.obj
-.PHONY : bsearch.cpp.obj
+src/binary_search.c.obj:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\binary_search.dir\build.make algorithms/CMakeFiles/binary_search.dir/src/binary_search.c.obj
+.PHONY : src/binary_search.c.obj
 
-bsearch.i: bsearch.cpp.i
+src/binary_search.i: src/binary_search.c.i
 
-.PHONY : bsearch.i
+.PHONY : src/binary_search.i
 
 # target to preprocess a source file
-bsearch.cpp.i:
-	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/bsearch.cpp.i
-.PHONY : bsearch.cpp.i
+src/binary_search.c.i:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\binary_search.dir\build.make algorithms/CMakeFiles/binary_search.dir/src/binary_search.c.i
+.PHONY : src/binary_search.c.i
 
-bsearch.s: bsearch.cpp.s
+src/binary_search.s: src/binary_search.c.s
 
-.PHONY : bsearch.s
+.PHONY : src/binary_search.s
 
 # target to generate assembly for a file
-bsearch.cpp.s:
-	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/bsearch.cpp.s
-.PHONY : bsearch.cpp.s
+src/binary_search.c.s:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\binary_search.dir\build.make algorithms/CMakeFiles/binary_search.dir/src/binary_search.c.s
+.PHONY : src/binary_search.c.s
+
+src/bsearch.obj: src/bsearch.cpp.obj
+
+.PHONY : src/bsearch.obj
+
+# target to build an object file
+src/bsearch.cpp.obj:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/src/bsearch.cpp.obj
+.PHONY : src/bsearch.cpp.obj
+
+src/bsearch.i: src/bsearch.cpp.i
+
+.PHONY : src/bsearch.i
+
+# target to preprocess a source file
+src/bsearch.cpp.i:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/src/bsearch.cpp.i
+.PHONY : src/bsearch.cpp.i
+
+src/bsearch.s: src/bsearch.cpp.s
+
+.PHONY : src/bsearch.s
+
+# target to generate assembly for a file
+src/bsearch.cpp.s:
+	cd /d D:\cur\a7_100t_img_p\test && $(MAKE) -f algorithms\CMakeFiles\bsearch.dir\build.make algorithms/CMakeFiles/bsearch.dir/src/bsearch.cpp.s
+.PHONY : src/bsearch.cpp.s
 
 # Help Target
 help:
@@ -158,11 +200,15 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... bsearch
-	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... bsearch.obj
-	@echo ... bsearch.i
-	@echo ... bsearch.s
+	@echo ... binary_search
+	@echo ... edit_cache
+	@echo ... src/binary_search.obj
+	@echo ... src/binary_search.i
+	@echo ... src/binary_search.s
+	@echo ... src/bsearch.obj
+	@echo ... src/bsearch.i
+	@echo ... src/bsearch.s
 .PHONY : help
 
 

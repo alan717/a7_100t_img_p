@@ -1,2 +1,5 @@
 /.vs/
 /Debug/
+lua_tester.VC.db
+/x64/*
+*.cbp

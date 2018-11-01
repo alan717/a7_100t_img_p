@@ -1,6 +1,7 @@
 #include <iostream>
-#include <windows.h>
+
 #include <winsock2.h>
+#include <windows.h>
 
 int main()
 {

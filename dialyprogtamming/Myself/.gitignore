@@ -1,0 +1,11 @@
+/.vs/
+/Debug/*
+*.exe
+*.db
+*.opendb
+*.log
+*.obj
+*.idb
+*.pdb
+*.tlog
+*.lastbuildstate

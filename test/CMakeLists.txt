@@ -46,4 +46,4 @@ add_subdirectory(bfs)
 add_subdirectory(dfs)
 add_subdirectory(dijkstra)
 add_subdirectory(svr)
-
+add_subdirectory(time_sync)

@@ -5,6 +5,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 #add_subdirectory(${PROJECT_SOURCE_DIR}/test)
 #add_subdirectory(${PROJECT_SOURCE_DIR}/file_test)
 message("${SRC}")
+message("fuck y")
 set(Boost_DIR "D:\\etc\\boost_1_67_0")
 set(BOOST_ROOT "D:\\etc\\boost_1_67_0")
 set(BOOST_INCLUDEDIR ${BOOST_ROOT}\\)
@@ -12,7 +13,7 @@ set(BOOST_LIBRARYDIR ${BOOST_ROOT}\\stage\\lib)
 #Boost_LIBRARY_DIRS
 #set(Boost_NO_SYSTEM_PATHS  ON)
  
-#set(Boost_USE_DEBUG_LIBS			ON) 
+set(Boost_USE_DEBUG_LIBS			ON) 
 set(Boost_USE_STATIC_LIBS			ON) # only find static libs
 set(Boost_USE_MULTITHREADED			ON)
 #set(Boost_USE_DEBUG_LIBS			ON) # ignore debug libs and

@@ -12,14 +12,14 @@ set(BOOST_LIBRARYDIR ${BOOST_ROOT}\\stage\\lib)
 #Boost_LIBRARY_DIRS
 #set(Boost_NO_SYSTEM_PATHS  ON)
  
-set(Boost_USE_DEBUG_LIBS			ON) 
+#set(Boost_USE_DEBUG_LIBS			ON) 
 set(Boost_USE_STATIC_LIBS			ON) # only find static libs
 set(Boost_USE_MULTITHREADED			ON)
 #set(Boost_USE_DEBUG_LIBS			ON) # ignore debug libs and
 set(Boost_USE_STATIC_RUNTIME		OFF)
 #set(Boost_USE_RELEASE_LIBS			ON) 
 add_definitions(-D_MT )
-find_package(Boost  1.67.0  REQUIRED  COMPONENTS system  regex date_time )
+find_package(Boost  1.67.0  REQUIRED  COMPONENTS system  regex date_time thread)
 
  
 if(Boost_FOUND)
@@ -37,4 +37,4 @@ add_executable(${PROJECT_NAME}  ${SRC})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} )
 link_directories(${Boost_LIBRARIES})
-set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/BUILD/)
+#set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/BUILD/)

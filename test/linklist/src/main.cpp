@@ -1,6 +1,6 @@
 #include<windows.h> 
 #include <iostream>
-#include"List.h"
+#include"CList.h"
 using namespace std;
 struct SComplex
 {

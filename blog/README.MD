@@ -1,41 +1,71 @@
->   人生最大的痛苦不是失败,而是没有经历自己想要经历的一切  
+ 
+# Lua从接触到熟练过程(自己的过程)
 
-# 凯的项目
+>在接触的工程中用到很多的tricks,在此记录下启发后来者
 
-[![N|Solid](http://www.zhxia.net/uploads/allimg/180307/1-1P30G54630.png)](https://github.com/alan717/a7_100t_img_p)  
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-这是自己项目及其做过的东西的集合每个文件夹是一个单独的proj.
-
-  - 目前有Andrdoid hook
-  - TLS socket
-  - gdb script
-
-### New Features!
-
-  - 新整理仓库
+### 基本目标:达成打开lua的任意门
+每个人都有基本功所以不说废话,说一些全局的认知,细节的东西每个人都会.所以叙述用源码文件结构的说明方法
+强调的是把lua虚拟机看做是一个entity.一个运行的entity,它提供了所有其他软件实体所有的一切的功能;
+ 
+### 注册函数(万变不离其宗)
+lua也有局部函数和全部函数的概念,可以在C 调用lua_register来进行注册,一般来讲有注册模块的局部表注册和全局表,目前来看种种slua,还是luajit来讲是这一种模式,所以在处理上,  
+只用熟悉lua的基础工具函数lib函数,就可以达到熟练的阶段,目前我接触的游戏的还是其他工具软件都是一样的道理.
 
 
-### 集合
+### 编写模块(具体的lua提供的外部函数熟悉)
+参考lmathlib.c ,lstrlib.c 这里边使用的是lua提供的外部函数,这个在处理堆栈传值有参考价值.
 
-| 文件夹 | 详细说明 |
+
+### 内部接口(看lua对字符串和一些表的处理方法)
+lapi.c内部的函数接口,依赖lua.h和luaconf.h有点难度,但不是重点所在.
+
+### opcode实现
+lopcodes.h 这里字节码的是现在这里,有lua和luac字节码文件.这个和py有点像.可以视作一样.
+
+
+### 运行时的东西
+ldo.c 堆栈 调用 异常 协程,一些小细节
+
+### 数据结构 (重点)
+lstring.c ltable.c 很多数据结构在开发的时候会莫名其妙,在这里能看到细节,其中metatable和基础table.userdata这种.在没有debug提供的情况下,提供打印table和metatable的函数是一个比较棒的debug方式.
+ltm.c metamethod 要读读lvm.c的基本实现.粗看到了解
+### 调试(手段)
+有调试环境的情况下充分发挥debug的功能,ldebug.c里的调试手段,可以花式操作
+### 语言解析
+lua的解析细节就在lparase.c 和lcode.c 在一个基于reg虚拟机中的递归下降解析，编译器部分。
+### 垃圾回收
+一般来讲涉及不到垃圾回收
+### 其他文件的阅读
+其他的有闭包特性，迭代器泛型等等lfun.c文件都是一个学习的好东西
+### 仔细整理下
+
+总体来讲从外而内,从大到小,基本原理相同.所有的东西都一样.py也是.
+
+### 总览  
+
+| 文件 | 详细说明 |
 | ------ | ------ |
-| mh | [数据解析][PlDb] |
-| test | [cpp库的东西][PlGh] |
+| lmathlib.c, lstrlib.c:  | [lua导出函数]  |
+| lauxlib.c | [提供的开发lib的工具函数]|  
+|lapi.c | API内部实现|  
+|lobject.h | 值和对象的具体实现,略看 | 
+|ldo.c: | call 堆栈,异常,协程,闭包等|
+|lvm.c|虚拟机内部luaV_execute,内部循环逻辑,所有的LUA指令实现|
+|lopcodes.h|字节码|
+|lstate.h|状态机|
+|lstring.c|内部字符串|
+|ltable.c|表,array,hash|
+|ltm.c|metatable处理,整体的很多设计都关乎metatable|
+|ldebug.c |调试模块,好工具|
+|lparser.c,lcode.c|递归下降语义的解释过程,chunk()开始|
+|lgc.c|垃圾回收算法|
 
-
-
-
-
-### Todos
- - 添加一些C++自己库
- - 添加一些linux hook 工具集
+### 总结
+整体来看还是很系统的设计,所以对待视作一个系统entity就会简化很多问题.
+在插全局函数还是局部函数可以一路trace,看具体的表在哪里,_G这种全局变量要熟悉.还有模块加载.由内而外,从外到内这种方法来掌握Lua,Don't panic!
 
 License
 ----
+
 MIT
-
-**Free Software, Hell Yeah!**
-
 

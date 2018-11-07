@@ -42,3 +42,8 @@ add_subdirectory(wins)
 add_subdirectory(algorithms)
 add_subdirectory(opencv_arch)
 add_subdirectory(linklist)
+add_subdirectory(bfs)
+add_subdirectory(dfs)
+add_subdirectory(dijkstra)
+add_subdirectory(svr)
+

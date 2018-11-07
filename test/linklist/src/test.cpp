@@ -2,9 +2,7 @@
 #include"CList.h"
 #include"CStack.h"
 #include"CQueue.h"
-
 using namespace std;
-
 int main()
 {
 	CQueue<int>* cQueue = new CQueue<int>();

@@ -1,0 +1,20 @@
+
+# Python program to illustrate reflection 
+def reverse(seq): 
+    SeqType = type(seq) 
+    emptySeq = SeqType() 
+      
+    if seq == emptySeq: 
+        return emptySeq 
+      
+    restrev = reverse(seq[1:]) 
+    first = seq[0:1] 
+      
+    # Combine the result 
+    result = restrev + first 
+      
+    return result 
+  
+# Driver code 
+print(reverse([1, 2, 3, 4])) 
+print(reverse("HELLO")) 

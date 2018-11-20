@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(svr)
+project(boost_test)
 FILE(GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/*.cpp)
 include_directories(${PROJECT_SOURCE_DIR})
 #add_subdirectory(${PROJECT_SOURCE_DIR}/test)
 #add_subdirectory(${PROJECT_SOURCE_DIR}/file_test)
 message("${SRC}")
 message("fuck y")
-set(Boost_DIR "D:\\etc\\boost_1_67_0")
+#set(Boost_DIR "D:\\etc\\boost_1_67_0")
 set(BOOST_ROOT "D:\\etc\\boost_1_67_0")
-set(BOOST_INCLUDEDIR ${BOOST_ROOT}\\)
-set(BOOST_LIBRARYDIR ${BOOST_ROOT}\\stage\\lib)
+#set(BOOST_INCLUDEDIR ${BOOST_ROOT}\\)
+#set(BOOST_LIBRARYDIR ${BOOST_ROOT}\\stage\\lib)
 #Boost_LIBRARY_DIRS
 #set(Boost_NO_SYSTEM_PATHS  ON)
  
@@ -24,11 +24,11 @@ find_package(Boost  1.67.0  REQUIRED  COMPONENTS system  regex date_time thread)
 
  
 if(Boost_FOUND)
-     
-	 #打印一下简单的消息
-	 message( STATUS "包含:${Boost_INCLUDE_DIRS};\n库目录:${Boost_LIBRARY_DIRS};\n库:${Boost_LIBRARIES};\n版本:${Boost_VERSION}\n库目录2:${Boost_LIBRARY_DIRS}")
+     #打印一下简单的消息  库:${Boost_LIBRARIES};\n
+	 message( STATUS "包含:${Boost_INCLUDE_DIRS};\n库目录:${Boost_LIBRARY_DIRS};\n版本:${Boost_VERSION}\n参数:${Boost_LIB_DIAGNOSTIC_DEFINITIONS}")
 	 #message( STATUS "${Boost_LIB_VERSION};\n${Boost_MAJOR_VERSION};\n${Boost_MINOR_VERSION};\n${Boost_LIB_DIAGNOSTIC_DEFINITIONS};\n")
-	 message( STATUS "组建:${Boost_FIND_COMPONENTS}")
+	  
+	 message( WARNING "组建:${Boost_FIND_COMPONENTS}")
 	 else()
 	 message(WARNING "not found boost")
 endif()
@@ -37,5 +37,6 @@ include_directories(${Boost_INCLUDE_DIRS})
 add_executable(${PROJECT_NAME}  ${SRC})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} )
-link_directories(${Boost_LIBRARIES})
+link_directories(${Boost_LIBRARIES}) #这条命令主要是传相对路径进行链接.
+#但是target_link_libraries已经将找到的绝对路径链接了.所以很少使用
 #set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/BUILD/)

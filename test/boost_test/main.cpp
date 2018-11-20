@@ -10,8 +10,11 @@
 
 #include <iostream>
 #include <boost/asio.hpp>
+#include <boost/array.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/bind.hpp>
+#include <boost/scoped_ptr.hpp>
+#include <boost/scoped_array.hpp>
 
 class printer
 {
@@ -68,14 +71,68 @@ private:
 	boost::asio::steady_timer timer2_;
 	int count_;
 };
+void print(const boost::system::error_code& /*e*/)
+{
+	std::cout << "Hello, world!" << std::endl;
+}
 
-int main()
+using boost::asio::ip::tcp;
+
+int main(int argc,char* argv[])
 {
 	boost::asio::io_context io;
 	printer p(io);
-	boost::thread t(boost::bind(&boost::asio::io_context::run, &io));
+	//boost::thread t(boost::bind(&boost::asio::io_context::run, &io));
 	io.run();
-	t.join();
+	//t.join();
+	boost::scoped_ptr<int> i(new int );
+	*i = 1;
+	*i.get() = 2;
+	i.reset(new int);
 
+	boost::asio::io_context ioo;
+	boost::asio::steady_timer ti(io, boost::asio::chrono::seconds(5));
+	ti.async_wait(&print);
+	io.run();
+
+
+
+
+	try
+	{
+		if (argc != 2)
+		{
+			std::cerr << "Usage: client <host>" << std::endl;
+			return 1;
+		}
+
+		boost::asio::io_context io_context;
+
+		tcp::resolver resolver(io_context);
+		tcp::resolver::results_type endpoints =
+			resolver.resolve(argv[1], "daytime");
+
+		tcp::socket socket(io_context);
+		boost::asio::connect(socket, endpoints);
+
+		for (;;)
+		{
+			boost::array<char, 128> buf;
+			boost::system::error_code error;
+
+			size_t len = socket.read_some(boost::asio::buffer(buf), error);
+
+			if (error == boost::asio::error::eof)
+				break; // Connection closed cleanly by peer.
+			else if (error)
+				throw boost::system::system_error(error); // Some other error.
+
+			std::cout.write(buf.data(), len);
+		}
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return 0;
 }

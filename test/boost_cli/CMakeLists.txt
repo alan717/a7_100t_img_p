@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(boost_test)
+project(boost_cli)
 FILE(GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/*.cpp)
 include_directories(${PROJECT_SOURCE_DIR})
 #add_subdirectory(${PROJECT_SOURCE_DIR}/test)

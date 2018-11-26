@@ -1,5 +1,17 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 PROJECT(test)
+include(CTest)
+enable_testing()
+# required modules for our task 
+include(CheckIncludeFile)
+include(CheckIncludeFileCXX)
+include(CheckIncludeFiles)
+include(ExternalProject)
+
+#to be created
+include(thirdparty/tbb.cmake)
+
+
 get_directory_property(has_parent PARENT_DIRECTORY)
 if(NOT has_parent)
     # When you call add_subdirectory(dlib) from a parent CMake project dlib's
@@ -51,4 +63,7 @@ add_subdirectory(asio_svr_udp)
 add_subdirectory(asio_cli)
 add_subdirectory(asio_cli_udp)
 add_subdirectory(ctp_test)
+add_subdirectory(tbb_test)
+add_subdirectory(thirdparty)
+add_subdirectory(test)
 #add_subdirectory(time_sync)

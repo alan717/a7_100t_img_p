@@ -10,7 +10,7 @@ void showpq(priority_queue <int> gq)
     { 
         cout << '\t' << g.top(); 
         g.pop(); 
-    } 
+    }
     cout << '\n'; 
 } 
 

@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
-project(boost_test)
-FILE(GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/*.cpp)
+project(ctp_test)
+#FILE(GLOB_RECURSE SRC ${PROJECT_SOURCE_DIR}/src/*.cpp)
 include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/ctp/inc/)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC)
+
 #add_subdirectory(${PROJECT_SOURCE_DIR}/test)
 #add_subdirectory(${PROJECT_SOURCE_DIR}/file_test)
 message("${SRC}")
@@ -34,10 +37,12 @@ if(Boost_FOUND)
 	 message(WARNING "not found boost")
 endif()
 
-include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARIES} ${PROJECT_SOURCE_DIR}/ctp/lib)
+include_directories(${Boost_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/ctp/inc/ ${PROJECT_SOURCE_DIR}/inc/)
 add_executable(${PROJECT_NAME}  ${SRC})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} )
-link_directories(${Boost_LIBRARIES}) #这条命令主要是传相对路径进行链接.
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} thosttraderapi thostmduserapi)
+
+#这条命令主要是传相对路径进行链接.
 #但是target_link_libraries已经将找到的绝对路径链接了.所以很少使用
 #set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/BUILD/)

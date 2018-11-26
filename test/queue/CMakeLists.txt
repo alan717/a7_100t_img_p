@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
-PROJECT(test)
+PROJECT(queue)
 
 
 SET(SRC_LIST priorityque.cpp)

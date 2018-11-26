@@ -3,7 +3,7 @@ PROJECT(opencv_arch)
 
  
 set("OpenCV_DIR" "D:\\cur\\opencv\\build\\x64\\vc14\\lib")
- set(OpenCV_STATIC ON)
+set(OpenCV_STATIC ON)
 find_package(OpenCV REQUIRED)
  
 include_directories(${OpenCV_INCLUDE_DIRS})

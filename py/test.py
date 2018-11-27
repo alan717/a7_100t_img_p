@@ -15,9 +15,13 @@ def find_content(content):
 	#print content
 	#<table class="table" style="margin-bottom:0;">
 	mypage_info=re.findall(r'<td>(.*?)</td>',content,re.S)
-	print mypage_info
+	#print mypage_info
 	return mypage_info
-
+def find_morePage(content):
+	'''在页面中找到更多的url来爬'''
+	more_page=re.findall(r'<a href="(.*?)">(.*?)</a>',content,re.S)
+	print "页面:%s"%more_page
+	return more_page
 	
 def Spider(url):
 	print "身份证下载........"
@@ -29,6 +33,7 @@ def Spider(url):
 	print page.getcode()
 	content=page.read()
 	finded=find_content(content)
+	pages=find_morePage(content)
 	#print finded.len()
 	strr=map(str,finded)
 	print strr
@@ -37,12 +42,16 @@ def Spider(url):
 		#	finded[s]=finded[s].decode('utf-8')
 		s=s*4
 		print finded[s].decode('utf-8'),finded[s+1].decode('utf-8'),finded[s+2].decode('utf-8'),finded[s+3].decode('utf-8')
-
+	
+	
+	for w in pages:
+		print w[0].decode('utf-8')
 	print "长度：%d" % len(page.read())
 
 
 
 if __name__=='__main__':
+	os.environ['http_proxy'] = ''
 	print "start "
 	url="http://m.sfzdq.diqibu.com/sfz/520302.html"
 	try:

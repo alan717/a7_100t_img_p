@@ -9,8 +9,8 @@ include(CheckIncludeFiles)
 include(ExternalProject)
 
 #to be created
-include(thirdparty/tbb.cmake)
-
+#include(thirdparty/tbb.cmake)
+#
 
 get_directory_property(has_parent PARENT_DIRECTORY)
 if(NOT has_parent)
@@ -64,6 +64,7 @@ add_subdirectory(asio_cli)
 add_subdirectory(asio_cli_udp)
 add_subdirectory(ctp_test)
 add_subdirectory(tbb_test)
-add_subdirectory(thirdparty)
-add_subdirectory(test)
+add_subdirectory(boost_chaoshijiance)
+#add_subdirectory(thirdparty)
+#add_subdirectory(test)
 #add_subdirectory(time_sync)

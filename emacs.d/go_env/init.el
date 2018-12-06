@@ -14,7 +14,7 @@
 (require 'use-package)
  '(package-selected-packages
    (quote
-    ( window-numbering nyan-mode solarized-theme  projectile cmake-mode  use-package undo-tree counsel-projectile)))
+    ( window-numbering nyan-mode solarized-theme  projectile cmake-mode  use-package undo-tree counsel-projectile go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -28,7 +28,7 @@
 
 
 ;; config company
-(load-theme 'solarized-dark)
+(load-theme 'solarized-dark t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -36,4 +36,14 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(package-selected-packages
+   (quote
+    (go-mode window-numbering use-package undo-tree solarized-theme nyan-mode counsel-projectile cmake-mode))))
+(global-linum-mode 1)
+
+(setq backup-directory-alist (quote (("." . "~/.emacs-backups"))))
+(global-set-key "\C-s" 'swiper)
+;;(global-set-key
+( window-numbering-mode t)
+;;2018;12;06

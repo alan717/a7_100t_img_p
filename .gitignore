@@ -3,3 +3,5 @@
 *.exe
 *.out
 /depends22_x86/
+/mylib/
+/play/

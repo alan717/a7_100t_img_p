@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)glew-2.1.0-win32\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\repo\a7_100t_img_p\MFCApplication1\OpenGlDemo\glew-2.1.0-win32\glew-2.1.0\lib\Release\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -167,6 +167,7 @@
     <ClInclude Include="scenebasic.h" />
     <ClInclude Include="scenebasic_attrib.h" />
     <ClInclude Include="scenebasic_uniform.h" />
+    <ClInclude Include="scenebasic_uniformblock.h" />
     <ClInclude Include="scenerunner.h" />
   </ItemGroup>
   <ItemGroup>

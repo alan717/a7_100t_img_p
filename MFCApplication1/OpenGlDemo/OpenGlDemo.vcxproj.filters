@@ -65,6 +65,9 @@
     <ClInclude Include="scenebasic_uniform.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="scenebasic_uniformblock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

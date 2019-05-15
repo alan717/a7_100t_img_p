@@ -2,7 +2,6 @@
 #define SCENEBASIC_H
 
 #include "scene.h"
-
 #include "glad.h"
 
 class SceneBasic : public Scene

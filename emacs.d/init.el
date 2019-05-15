@@ -1,5 +1,7 @@
-;; package-sumary:
-(setq inhibit-startup-message t)
+;;; Package --- Sumary:
+;;; Commentary:
+;;; Code:
+(defvar  inhibit-startup-message t)
 
 (require 'package)
 ;;;code
@@ -10,7 +12,7 @@
 
 
 (setq url-proxy-services '(("no_proxy" . "baidu.com")
-                           ("http" . "127.0.0.1:8118")))
+                           ("http" . "127.0.0.1:1087")))
 (add-to-list 'load-path "~/.emacs.d/my/")
 ;;
 ;;;(require 'smex)
@@ -325,11 +327,11 @@
     (counsel-projectile-on)
     ))
 (req-package-finish)
-;;req-package ending 
+;;req-package ending
 (global-hl-line-mode t)
 (global-linum-mode t)
 ;;;init.el end here
-(setq projectile-completion-system 'ivy)
+(defvar projectile-completion-system 'ivy)
 ;;(load-theme 'moe-dark t)
 (load-theme 'dracula t)
 
@@ -345,10 +347,10 @@
 (global-set-key (kbd "M-g") 'goto-line)
 ;;(global-set-key 
 
-(setq default-tab-width 4)
+(defvar default-tab-width 4)
 (setq-default indent-tabs-mode nil)
-(setq c-default-style "Linux")
-(setq c-basic-offset 4)
+(defvar c-default-style "Linux")
+(defvar c-basic-offset 4)
 ;;关闭工具栏
 (tool-bar-mode -1)
 ;;ido mode 
@@ -357,4 +359,4 @@
 ;;(ido-mode 1)
 ;;(defalias 'list-buffers 'ibuffer)
 
-
+;;; init.el ends here

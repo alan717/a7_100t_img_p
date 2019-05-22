@@ -1,0 +1,43 @@
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+        
+    vec2 uv = fragCoord.xy / iResolution.xy;// 将坐标转换到0-1之间
+    vec2 q = uv - vec2(0.5);
+    q.y *= iResolution.y/iResolution.x;
+    float r = 0.2;
+    vec2 p;
+    p.x = cos(-iTime*0.5)*q.x + sin(-iTime*0.5)*q.y;
+    p.y = -sin(-iTime*0.5)*q.x + cos(-iTime*0.5)*q.y;
+    q=p;
+    
+    float c1,c2;
+   
+    c1 = smoothstep(r, r+0.05, length(q))+(1.0-step(0.0, q.x));
+    r = 0.1;
+
+    c1 += 1.0-smoothstep(r, r+0.05, length(q-vec2(0.0,0.1)));
+    c1=min(c1, 1.0);
+    
+    r-=0.003;
+    c1 *= smoothstep(r, r+0.05, length(q+vec2(0.0, 0.105)));
+    
+    r=0.005;
+    c1 += 1.0-smoothstep(r, r+0.05, length(q+vec2(0.0,0.1)));
+    c1 *= smoothstep(r, r+0.05, length(q-vec2(0.0,0.1)));
+    
+    r=0.2;
+    c2 = smoothstep(r, r+0.05, length(q));
+    
+    r = 0.185;
+    c2 += 1.0-smoothstep(r, r+0.05, length(q));
+    c2=min(c2, 1.0);
+    
+    c1 *= c2;
+    c1 += texture(iChannel0, p.yx).x;
+    c1 = min(c1, 1.0);
+    
+    c1 *=pow(16.0*uv.x*uv.y*(1.0-uv.x)*(1.0-uv.y), 0.6);
+
+    fragColor = vec4(c1, c1, c1, 1.0);
+}

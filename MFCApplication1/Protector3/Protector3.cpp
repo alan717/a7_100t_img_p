@@ -7,7 +7,15 @@
 int main()
 {
     std::cout << "Hello World!\n"; 
-
+	int len = 100;
+	int v1 = len + 10;
+	int v2 = v1 % 8;
+	if (v2 != 0) v2 = 8 - v2;
+	unsigned int v3 = v1 + v2;
+	unsigned int v4 = v1;
+	std::cout << "hello world!\n";
+	v4 > v1 ? std::cout << "v4 great" : std::cout << "v1 great";
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

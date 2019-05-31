@@ -441,8 +441,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	
 	vec3 bgCol = vec3(0.3);
 	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
-	vec3 col2 = vec3(1.00, 0.329, 0.298); // yellow
-	vec3 col3 = vec3(0.867, 0.910, 0.247); // red
+	vec3 col2 = vec3(1.00, 0.329, 0.298); // red
+	vec3 col3 = vec3(0.867, 0.910, 0.247); // yellow
 
 	vec3 pixel = bgCol;
 	
@@ -536,8 +536,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	
 	vec3 bgCol = vec3(0.3);
 	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
-	vec3 col2 = vec3(1.00, 0.329, 0.298); // yellow
-	vec3 col3 = vec3(0.867, 0.910, 0.247); // red
+	vec3 col2 = vec3(1.00, 0.329, 0.298); // red
+	vec3 col3 = vec3(0.867, 0.910, 0.247); // yellow
 
 	vec3 pixel = bgCol;
 	
@@ -580,8 +580,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	
 	vec3 bgCol = vec3(0.0); // black
 	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
-	vec3 col2 = vec3(1.00, 0.329, 0.298); // yellow
-	vec3 col3 = vec3(0.867, 0.910, 0.247); // red
+	vec3 col2 = vec3(1.00, 0.329, 0.298); // red
+	vec3 col3 = vec3(0.867, 0.910, 0.247); //  yellow
 
 	vec3 pixel = bgCol;
 	
@@ -697,9 +697,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	// use [0,1] coordinate system for this example
 	
 	vec3 bgCol = vec3(0.0); // black
-	vec3 col1 = vec3(0.216, 0.471, 0.698); // blue
-	vec3 col2 = vec3(1.00, 0.329, 0.298); // red
-	vec3 col3 = vec3(0.867, 0.910, 0.247); // yellow
+	vec3 col1 = vec3(0.216, 0.471, 0.698); 	// blue
+	vec3 col2 = vec3(1.00, 0.329, 0.298); 	// red
+	vec3 col3 = vec3(0.867, 0.910, 0.247); 	// yellow
 
 	vec3 pixel = bgCol;
 	

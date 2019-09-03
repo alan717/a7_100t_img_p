@@ -184,6 +184,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dirent.h" />
     <ClInclude Include="jd.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MFCApplication2.h" />

@@ -14,8 +14,7 @@ class CExample : public CWinApp {
 
 		Frame->ShowWindow(SW_NORMAL);
 		Frame->UpdateWindow();
-
-		return TRUE;
+ 		return TRUE;
 	}
 };
 

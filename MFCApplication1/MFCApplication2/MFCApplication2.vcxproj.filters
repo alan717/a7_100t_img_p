@@ -39,6 +39,9 @@
     <ClInclude Include="jd.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="dirent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApplication2.cpp">
